@@ -2,5 +2,23 @@ extend layout
 
 
 block content 
-	p.container
-		this is Contact!!!!!!!!!!
+    div.container
+        form(name="selF",method="POST").row#selF.col-lg-9.col-sm-9.col-md-9.justify-content-center
+            label(for="nam") Enter Name:
+            input(type="text",name="nam",placeholder="Shailee").form-control.mt-15#ip1.required
+            label(for="ch") Pick a choice:
+            select(name="ch").form-control.mt-15.required
+                //- var chs = {choice}
+                each item in choice
+                    option #{item}
+            button(type="submit",disabled=choice?false:true)#sub.mt-15.btn.btn-primary send
+
+        
+            p.row#respText 
+
+
+
+        //+selectForm(#{choice})
+    
+    //mixin selectForm(arr)
+        

@@ -4,15 +4,17 @@ var debug = require('debug');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	debug("here")
-    res.render('contact');
+    console.log("**************************")
+    res.render('contact', { choice: ['y1', 'y2', 'y3'] });
 
 });
 
 router.post('/savedetails', function(req, res, next) {
-    var details = req.body;
-    var reply = "Yello! " + details.name + "  yours details have been registered.";
-    res.render('contact', { reply: reply });
+    console.log(req.data, req.body)
+    var details = req.body.name;
+    var reply = "Yello " + details + "!  yours details have been registered.";
+    res.status(200).send(reply);
+
 
 });
 

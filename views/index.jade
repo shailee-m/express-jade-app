@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container
+      div.row
+        h1= title
+      div.row-lg-10.row-sm-10.row-md-10.justify-content-center
+        div.col 
+        h2 HEADING@2
+        div We start by creating a div with the class row, then nested inside it are three layout divs that will hold the panels illustrated above.
+        br
+        \Each div has the class col-md-4 setting it to be four columns wide at medium size or higher. Next is the class col-sm-6 setting it to be six columns wide at small size, and finally the class col-xs-12 setting it to twelve columns wide at extra small size
+        div.col 
+        h2 HEADING@2
+        div We start by creating a div with the class row, then nested inside it are three layout divs that will hold the panels illustrated above. 
+        //- div.container
+        div.row.justify-content-center
+            div.col-md-4.col-lg-5.col-sm-4 
+                h3 heading3 -1 
+                div We start by creating a div with the class row, then nested inside it are three layout divs that will hold the panels illustrated above. Each div has the class col-md-4 setting it to be four columns wide at medium size or higher. Next is the class col-sm-6 setting it to be six columns wide at small size, and finally the class col-xs-12 setting it to twelve columns wide at extra small size.  We start by creating a div with the class row, then nested inside it are three layout divs that will hold the panels illustrated above. Each div has the class col-md-4 setting it to be four columns wide at medium size or higher. 
+            
+            div.col-md-4.col-lg-5.col-sm-4 
+                h3 heading3 -2 
+                div Next is the class col-sm-6 setting it to be six columns wide at small size, and finally the class col-xs-12 setting it to twelve columns wide at extra small size.  We start by creating a div with the class row, then nested inside it are three layout divs that will hold the panels illustrated above. Each div has the class col-md-4 setting it to be four columns wide at medium size or higher. Next is the class col-sm-6 setting it to be six columns wide at small size, and finally the class col-xs-12 setting it to twelve columns wide at extra small size
+
+        //- div.row
+        //-     div.col-md-4.col-sm-6.col-xs-12 wertyuioijhfssdfghnm,jxcvbnkhgfghjytfghjktyhujiktyhujik
+        //-     div.col-md-4.col-sm-6.col-xs-12 sdrftgyhujikjhgfdrtfgyhujikjihuygftrdftgyhujihygtdrdftgyhujiuhygtresdtfgyhujiuygt
