@@ -58,7 +58,7 @@
         $(document).on('submit', 'form#selF', function(e) {
             e.preventDefault();
             var name = $("input#ip1").val();
-            $.post("http://localhost:3000/contact/savedetails", {
+            $.post("/form/savedetails", {
                     name: name
                 },
                 function(data, status) {
