@@ -5,7 +5,7 @@ var debug = require('debug');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     console.log("**************************")
-    res.render('contact', { choice: ['y1', 'y2', 'y3'] });
+    res.render('contact', { choice: ['y1', 'y2', 'y3'], route: 'form' });
 
 });
 

@@ -4,7 +4,7 @@ extend layout
 block content 
     div.container
         h1.justify-content-center Table of Contents
-        table.table.table-striped.table-bordered.table-hover
+        table.table.table-striped.table-hover
             thead
                 tr
                     -var keys = Object.keys(details[0])
@@ -15,12 +15,22 @@ block content
                 - var iters = details.length
                 -for(i=0;i<iters;i++){
                     tr
-                    -var keys = Object.keys(details[0])
-                    -for( j=0;j<keys.length;j++ ){
-                        - if(i%3==0)
-                            th.success= details[i][keys[j]] 
-                        - else
-                            th= details[i][keys[j]]                    
-                    - } 
+                        // a(data-toggle="tooltip" title="Click email to edit")
+                        -var keys = Object.keys(details[0])
+                        -for( j=0;j<keys.length;j++ ){
+                            - if(details[i].isEdit)
+                                td.success= details[i][keys[j]] 
+                            - else
+                                
+                                    - if(keys[j]=='email')
+                                        td
+                                            input.form-control(placeholder="email",type='text',iter=i,value=details[i][keys[j]],class="email#{i}")#emailip
+                                    - else if(keys[j]=='isEditedOnce')
+                                        td#edt(iter=i)= details[i][keys[j]]
+                                    - else
+                                        td= details[i][keys[j]]
+
+                                                    
+                        - } 
                 - }
                 

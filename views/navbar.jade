@@ -12,6 +12,8 @@ block navbar
      
         #navbar-inverse.collapse.navbar-collapse
             ul.nav.navbar-nav
-                li.active: a( href="/") Home
-                li: a( href="/table" ) table
-                li: a( href="/form" ) form
+                - var page = route //document.URL.split('/')[document.URL.split('/').length-1]
+                li#hometab: a( href="/")(class=page==''?'active':'') Home
+                li#tabletab: a( href="/table" )(class=page=='table'?'active':'') table
+                li#formtab: a( href="/form")(class=page=='form'?'active':'') form
+

@@ -74,10 +74,62 @@
                         $("#respText").addClass("has-success");
                         $("#respText").text(data);
                     }
-                    //alert("Data: " + data + "\nStatus: " + status);
+                    // alert("Data: " + data + "\nStatus: " + status);
                 });
 
         });
+
+
+
+        /*--------------------------------------------------------------------*/
+        // $('[data-toggle="tooltip"]').tooltip();
+        $('*#emailip').on('change', changefn);
+
+        function changefn(e) {
+            e.preventDefault();
+            var state = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($(this).val())
+            if (state) {
+                var curr = $(this).attr('iter');
+                var edts = $('*#edt');
+                console.log(edts)
+                $("#temp").remove();
+                for (i = 0; i < edts.length; i++) {
+                    if ($(edts[i]).attr('iter') == curr) {
+                        $(edts[i]).text('1')
+                        $(this).removeClass('danger');
+
+                        $(edts[i]).parent().addClass("success")
+                    }
+                }
+            } else {
+                $(this).parent().parent().removeClass('success');
+                $(this).addClass('danger');
+                var warning = document.createTextNode('Please enter valid email');
+                $(warning).addClass("temp")
+                $(this).append(warning)
+
+                // $icon.attr('class', 'glyphicon glyphicon-remove');
+            }
+
+            /*------------------------------------------*/
+
+
+
+            // console.log($(this).attr())
+        }
+
+        // $('#emailip').on('change', function(e) {
+        //     e.preventDefault();
+
+
+
+        // });
+
+
+        /*------------------------------------------------------------------------*/
+
+
+
     })
 
 })(jQuery);
